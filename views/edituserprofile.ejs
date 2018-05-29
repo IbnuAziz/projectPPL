@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   	<% include partials/head.ejs %>
+		<title><%= title %></title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               	<br>
+	               	<center>
+			  			<img src="/../images/favicon.png" style="height:70px;">
+			 		</center>
+	               	<h2 class="title">Edit Data USER SIMAC</h2>
+
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form class="form-horizontal" method="post" action="/edituserprofile/edit/<%=data[0].id%>">
+						
+
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" id="name"  placeholder="Masukkan Username" value="<%=data[0].username%>"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Masukkan Password" value="<%=data[0].password%>"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="username"  placeholder="Masukkan E-Mail" value="<%=data[0].email%>"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Nomor Telepon</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="no_telepon" id="name"  placeholder="Masukkan Nomor Telepon" value="<%=data[0].no_telepon%>"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Edit</button>
+						</div>
+						<div class="login-register">
+				            <h4><a href="/">Home</a></h4>
+				         </div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<% include partials/scripts.ejs %>
+	</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="image/png" href="/../images/favicon.png"/>
+	<% include partials/head.ejs %>
+	<title><%= title %></title>
+</head>
+<body>
+		<nav class="navbar navbar-inverse">
+						<ul class="nav navbar-nav">
+							<li><a><img src="/../images/favicon1.png" style="height:20px;"></a></li>
+							<li><a href="/..">Home</a></li>
+							<li><a href="profil">Profil Mesjid/Mushola</a></li>
+							<li><a href="kegiatan">Kegiatan</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+	<div class="jumbotron">
+  	<div class="container text-center">
+ 	</div>
+	</div>	
+	<div class="container">
+	<div class="row">
+	<div class="col-sm-8">
+		<div class="list-group" style="width: 130%; margin-left: 60px;">
+        	<% if(data.length){
+
+                for(var i = 0;i < data.length;i++) { %>
+
+                            <button class="list-group-item" onclick="myFunctionProfile();myFunctionProfile1()"><%=data[i].nama_masjid%></button>
+                            <div id="myDIVProfile" style="display: none;">
+                            	<div id="comment_form" >
+			                		<form method="post" action="/profil/add">
+			                		<h4><b>Kolom Komentar Untuk Kegiatan</b></h4>
+								    <div>
+								        <input type="text" name="nama" id="nama" value="" placeholder="Name">
+								    </div>
+								    <div>
+								        <input type="email" name="email" id="email" value="" placeholder="Email">
+								    </div>
+								    <div>
+								        <textarea rows="10" name="komentar" id="comment" placeholder="Comment Form"></textarea>
+								    </div>
+								    <div>
+								        <input type="submit" name="submit" value="Add Comment" style="margin-left: 5px;" onclick="myFunctionAlert()">
+								    </div>
+								    </form> 
+								</div>
+                            </div>
+                <% }
+
+                }else{ %>
+                    <tr>
+                        <td colspan="3">No data</td>
+                    </tr>
+                <% } %>
+        </div>
+	</div>
+	<div class="row-login" id="pwd-container">
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-4">
+	<section class="login-form">
+	</section>  
+	</div>		  
+	</div>
+	</div>	
+	<div class="sidebar-update">
+
+</div>
+<div class="col-sm-4">
+
+</div>
+<div class="col-sm-3">
+	<img id="myImg" src="/../images/map1.png" alt="Trolltunga, Norway" style="width:240px ;height: 220px; margin-top: 11px; margin-left: 8px; margin-top: 15px">
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+	<div class="mapouter">
+	<div class="gmap_canvas">
+		<iframe width="782" height="481" id="gmap_canvas" src="https://maps.google.com/maps?q=masjid di kecamatan cibiru&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+		</iframe>
+	<a href="https://www.webdesign-muenchen-pb.de">zur webseite</a>
+	</div>
+	<style>
+	.mapouter{overflow:hidden;height:481px;width:782px;margin-left: 260px;}
+	.gmap_canvas {background:none!important;height:481px;width:782px;}
+	</style>
+</div>
+	<span class="close">&times;</span>
+  <div id="caption"></div>
+</div>
+</div>
+</div>
+<div class="footer">
+</div>
+	<% include partials/scripts.ejs %>
+</body>
+</html>

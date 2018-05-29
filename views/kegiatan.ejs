@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="image/png" href="/../images/favicon.png"/>
+	<% include partials/head.ejs %>
+	<title><%= title %></title>
+</head>
+<body>
+		<nav class="navbar navbar-inverse">
+						<ul class="nav navbar-nav">
+							<li><a><img src="/../images/favicon1.png" style="height:20px;"></a></li>
+							<li><a href="/..">Home</a></li>
+							<li><a href="profil">Profil Mesjid/Mushola</a></li>
+							<li><a href="kegiatan">Kegiatan</a></li>
+						</ul>
+						
+						<!--<ul class="nav navbar-nav navbar-right">
+							<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						</ul>-->
+					</div>
+				</div>
+			</nav>
+	<div class="jumbotron">
+  <div class="container text-center">
+  </div>
+</div>
+<div class="container">
+
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="list-group" style="width: 130%; margin-left: 60px;">
+                <button class="list-group-item" onclick="myFunction()"><%=data[0].nama_kegiatan%></button>
+                <div id="myDIV" style="display: none;">
+                	<p>Jenis Kegiatan : <%=data[0].jenis_kegiatan%></p>
+                	<p>Type Kegiatan : <%=data[0].type_kegiatan%></p>
+                	<p>Pengisi Kegiatan : <%=data[0].pengisi_kegiatan%></p>
+                	<p>Keterangan : Untuk Type Kegiatan Umum Anda Tidak Harus Mendaftarkan Diri & Apabila Type Kegiatan Khusus, Anda Harus Mendaftarkan Diri Terlebih Dahulu</p>
+                	<div id="comment_form" >
+                		<form method="post" action="/kegiatan/add">
+                		<h4><b>Kolom Komentar Untuk Kegiatan</b></h4>
+					    <div>
+					        <input type="text" name="nama" id="nama" value="" placeholder="Name">
+					    </div>
+					    <div>
+					        <input type="email" name="email" id="email" value="" placeholder="Email">
+					    </div>
+					    <div>
+					        <textarea rows="10" name="komentar" id="comment" placeholder="Comment Form"></textarea>
+					    </div>
+					    <div>
+					        <input type="submit" name="submit" value="Add Comment" style="margin-left: 5px;" onclick="myFunctionAlert()">
+					    </div>
+					    </form> 
+					</div>
+                </div>
+        </div>	
+		</div>
+		<div class="row-login" id="pwd-container">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-4">
+			  <section class="login-form">
+				
+			  </section>  
+			  </div>
+			  
+		  </div>
+	</div>
+</div>
+<div class="footer">
+</div>
+	<% include partials/scripts.ejs %>
+</body>
+</html>
