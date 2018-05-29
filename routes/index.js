@@ -12,6 +12,45 @@ exports.home = function(req, res){
     });
 };
 
+//komentar
+
+exports.komentarList = function(req, res){
+     req.getConnection(function(err, connection){
+
+        var query = connection.query("SELECT * FROM komentar", function(err, rows){
+
+            if(err)
+                console.log("Error Selecting : %s ", err);
+
+            res.render('komentar', {
+                title: 'Komentar List',
+                page_title: "Komentar List", data:rows
+            });
+        });
+    });
+};
+
+exports.delete_komentarList = function(req, res){
+
+    var id = req.params.id;
+    
+     req.getConnection(function (err, connection) {
+        
+        connection.query("DELETE FROM komentar  WHERE id = ? ",[id], function(err, rows)
+        {
+            
+             if(err)
+                 console.log("Error deleting : %s ",err );
+            
+             res.redirect('/komentar');
+             
+        });
+        
+     });
+};
+
+//------------------------------------------------------//
+
 //profile
 
 exports.profil = function(req, res,next){

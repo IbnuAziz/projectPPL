@@ -52,6 +52,11 @@ app.get('/redirects', index.redirects);
 app.get('/homeAdmin', index.homeAdmin);
 //-------------------------------------------------------------//
 
+//komentar
+
+app.get('/komentar', index.komentarList);
+app.get('/edit_komentarList/delete/:id', index.delete_komentarList);
+//-----------------------------------------------------------//
 //kegiatan
 
 app.get('/kegiatan', index.kegiatan);

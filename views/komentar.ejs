@@ -69,28 +69,16 @@
                 <div bgcolor="#ADE8E6">
                     <img src="/../images/header2.png" style="height:165px;">
                     <h1><i>Selamat Datang di Dasboard Admin<i></h1>
-                    <h3>Data Kegiatan</h3>
-                        <form method="post" action="/dataKegiatanAdmin/add">
-                            <input type="text" name="nama_kegiatan" placeholder="Nama Kegiatan">
-                            <br>
-                            <input type="text" name="jenis_kegiatan" placeholder="Jenis Kegiatan">
-                            <br>
-                            <input type="radio" name="type_kegiatan" value="umum"> Umum
-                            <input type="radio" name="type_kegiatan" value="khusus"> Khusus<br>
-                            <br>
-                            <input type="text" name="pengisi_kegiatan" placeholder="Pengisi Kegiatan">
-                            <br>
-                            <input type="submit" value="Submit">
-                        </form>     
+                    <h3>List Komentar</h3>
+                        
                       <div class="table-responsive">          
                         <table class="table">
                           <thead>
                             <tr>
                               <th>#</th>
-                              <th>Nama Kegiatan</th>
-                              <th>Jenis Kegiatan</th>
-                              <th>Type Kegitana</th>
-                              <th>Pengisi Kegiatan</th>
+                              <th>Nama</th>
+                              <th>Email</th>
+                              <th>Komentar</th>
                               <th>Action</th>
                             </tr>
                           </thead>
@@ -101,14 +89,12 @@
 
                             <tr>
                                 <td><%=(i+1)%></td>
-                                <td><%=data[i].nama_kegiatan%></td>
-                                <td><%=data[i].jenis_kegiatan%></td>
-                                <td><%=data[i].type_kegiatan%></td>
-                                <td><%=data[i].pengisi_kegiatan%></td>
+                                <td><%=data[i].nama%></td>
+                                <td><%=data[i].email%></td>
+                                <td><%=data[i].komentar%></td>
                                 <td>
-                                    <a class="a-inside edit" href="../edit_dataKegiatanAdmin/edit/<%=data[i].id%>">Edit</a>
 
-                                    <a class="a-inside delete" href="../edit_dataKegiatanAdmin/delete/<%=data[i].id%>>">Delete</a>
+                                    <a class="a-inside delete" href="../edit_komentarList/delete/<%=data[i].id%>>">Delete</a>
 
                                 </td>
                             </tr>

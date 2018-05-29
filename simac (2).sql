@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2018 at 09:13 PM
+-- Generation Time: May 29, 2018 at 10:54 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -103,8 +103,8 @@ CREATE TABLE `komentar` (
 --
 
 INSERT INTO `komentar` (`id`, `nama`, `email`, `komentar`) VALUES
-(1, 'ibnuazizn', 'ibnuaziznu@gmail.com', 'blablabalabla'),
-(2, 'ibnuazizn', 'ibnu@ppawtask.com', 'asdasdasdas');
+(2, 'ibnuazizn', 'ibnu@ppawtask.com', 'asdasdasdas'),
+(3, 'ibnuazizn', 'alinayah22@gmail.com', 'adsasdasdasdasd');
 
 -- --------------------------------------------------------
 
@@ -187,7 +187,7 @@ ALTER TABLE `data_pengurus`
 -- AUTO_INCREMENT for table `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
