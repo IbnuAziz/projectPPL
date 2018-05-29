@@ -1,3 +1,4 @@
 ini File Uji Coba
 cek
 -Line 2
+---------------------
